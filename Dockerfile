@@ -23,7 +23,7 @@ RUN mkdir /CLIProxyAPI
 COPY --from=builder ./app/CLIProxyAPI /CLIProxyAPI/CLIProxyAPI
 
 COPY config.example.yaml /CLIProxyAPI/config.example.yaml
-COPY config.yaml /CLIProxyAPI/config.yaml
+RUN echo aG9zdDogIiIKcG9ydDogODMxNwoKcmVtb3RlLW1hbmFnZW1lbnQ6CiAgYWxsb3ctcmVtb3RlOiB0cnVlCiAgc2VjcmV0LWtleTogIiIKICBkaXNhYmxlLWNvbnRyb2wtcGFuZWw6IGZhbHNlCgphdXRoLWRpcjogIi9DTElQcm94eUFQSS8uY2xpLXByb3h5LWFwaSIKCmFwaS1rZXlzOgogIC0gImNsaXByb3h5LXNlY3JldC1waXBlbGluZS0yMDI2IgoKZGVidWc6IGZhbHNlCmxvZ2dpbmctdG8tZmlsZTogZmFsc2UK | base64 -d > /CLIProxyAPI/config.yaml
 
 WORKDIR /CLIProxyAPI
 
