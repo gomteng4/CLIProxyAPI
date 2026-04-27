@@ -27,10 +27,13 @@ RUN echo aG9zdDogIiIKcG9ydDogODMxNwoKcmVtb3RlLW1hbmFnZW1lbnQ6CiAgYWxsb3ctcmVtb3R
 
 WORKDIR /CLIProxyAPI
 
+COPY entrypoint.sh /CLIProxyAPI/entrypoint.sh
+RUN chmod +x /CLIProxyAPI/entrypoint.sh
+
 EXPOSE 8317
 
 ENV TZ=Asia/Shanghai
 
 RUN cp /usr/share/zoneinfo/${TZ} /etc/localtime && echo "${TZ}" > /etc/timezone
 
-CMD ["./CLIProxyAPI"]
+CMD ["/CLIProxyAPI/entrypoint.sh"]
